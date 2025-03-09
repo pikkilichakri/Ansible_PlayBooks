@@ -11,7 +11,7 @@
     
     
 
- ---
+---
 - name: Check system OS and flavor information
   hosts: local
   connection: local

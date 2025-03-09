@@ -1,0 +1,14 @@
+ - name: to use raw and shell and command
+   hosts: local
+   connection: local
+   tasks:
+     - name: install package use shell
+       shell: dnf install unzip -y
+
+     - name: install package use command
+       command: dnf install wget -y
+    
+     - name: install package use raw
+       raw: dnf install lshw -y
+
+ 

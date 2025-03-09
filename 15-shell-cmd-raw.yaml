@@ -9,23 +9,11 @@
     #ansible.builtin.command: ls -ltr > /tmp/output.txt
     ansible.builtin.raw: ls -ltr > /tmp/output.txt
     
-  # - name: execute ls command in command module
-  #   #ansible.builtin.command: ls -ltr > /tmp/output.txt
-  #   #ansible.builtin.command: ls -ltr
-  #   ansible.builtin.command: lsss -ltrssfff
-  #   register: command_result
+  - name: execute ls command in command module
+    #ansible.builtin.command: ls -ltr > /tmp/output.txt
+    #ansible.builtin.command: ls -ltr
+    ansible.builtin.command: lsss -ltrssfff
+    register: command_result
 
-  - name: print the output
-    ansible.builtin.debug:
-      msg: "{{ command_result }}"
-
-  - name: install package use shell
-    shell: dnf install unzip -y
-
-  - name: install package use command
-    command: dnf install wget -y
-    
-  - name: install package use raw
-    raw: dnf install lshw -y
-    
+ 
 

@@ -1,0 +1,7 @@
+- name: check value is greater than 10 or not
+  hosts: local
+  connection: local
+  tasks:
+  - name: check system information 
+    ansible.builtin.yum: name=java-1.8.0-openjdk state=installed
+    when: ansible_os_family == "RedHat" and  ansible_pkg_mgr == "apt"

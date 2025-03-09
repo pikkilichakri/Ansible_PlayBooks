@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    my_number: 15
+    my_number: 10
   tasks:
   - name: print if number greater than 10
     ansible.builtin.debug:
@@ -15,6 +15,6 @@
     when: my_number <= 10
 
   - name: print if number is not equal 10
-  ansible.builtin.debug:
-    msg: "Given number {{ my_number }} is not eqaul 10"
-  when: my_number != 10
+    ansible.builtin.debug:
+      msg: "Given number {{ my_number }} is not eqaul 10"
+    when: my_number != 10

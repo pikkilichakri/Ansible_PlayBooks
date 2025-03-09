@@ -1,0 +1,48 @@
+---
+- name: All datatypes in Ansible
+  hosts: web
+  become: yes  # Run operations with sudo access (root access)
+
+  vars:
+    # Numbers
+    my_integer: 100
+    my_float: 3.14
+
+    # Boolean
+    is_enabled: true
+    is_disabled: false
+
+    # List (Array)
+    my_list: 
+      - apple
+      - banana
+      - cherry
+
+    # Set (Unique List)
+    my_set: 
+      - server1
+      - server2
+      - server3
+      - server1  # Duplicates will be removed using the unique filter in tasks.
+
+    # Dictionary (Key-Value Pair)
+    my_dict:
+      name: "Ansible"
+      version: 2.14
+      features:
+        - automation
+        - configuration
+        - management
+
+  tasks:
+    - name: Print all variables
+      debug:
+        msg: 
+          - "Integer: {{ my_integer }}"
+          - "Float: {{ my_float }}"
+          - "Boolean (Enabled): {{ is_enabled }}"
+          - "Boolean (Disabled): {{ is_disabled }}"
+          - "List: {{ my_list }}"
+          - "Set: {{ my_set | unique }}"  # Using filter to remove duplicates
+          - "Dictionary: {{ my_dict }}"
+

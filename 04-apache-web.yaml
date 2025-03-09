@@ -1,0 +1,13 @@
+- name: install and run httpd  #httpd=apache
+  hosts: web
+  become: yes # -b
+  tasks:
+  - name: install httpd
+    ansible.builtin.package:
+      name: httpd
+      state: present
+  - name: start the httpd
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: yes

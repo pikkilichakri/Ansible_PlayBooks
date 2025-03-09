@@ -1,0 +1,10 @@
+- name: Ignore Errors
+  hosts: localhost
+  connection: local
+  vars:
+    a: "{{ lookup('file', '20-ami.txt') }}"
+  tasks:
+    - name: lookup function to get the data from files
+      ansible.builtin.debug:
+        msg: "to get the ami values in file it is {{ a }}"
+        

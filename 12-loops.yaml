@@ -7,7 +7,6 @@
       name: "{{ item }}"
       state: installed
     loop:
-    - dlevel
     - pip
-    - java-openjdk11
+    - java-11-openjdk
     - java-1.8.0-openjdk

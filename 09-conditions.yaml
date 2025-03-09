@@ -1,4 +1,4 @@
-- name: check value is greater than 10 or not
+- name: check system os and falvour information
   hosts: local
   connection: local
   tasks:
@@ -7,6 +7,7 @@
     when: 
     - ansible_os_family == "RedHat" and  ansible_pkg_mgr == "apt"
     - ansible_os_family == "RedHat" or  ansible_pkg_mgr == "yum"
+    - ansible_os_distribution_version >= "22.04"
     
     
 

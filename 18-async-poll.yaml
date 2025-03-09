@@ -1,4 +1,4 @@
-- name: Ignore Errors
+- name: async and polling , we can restrict the time for onlyy to execute playbbok inside tasks
   hosts: localhost
   connection: local
   tasks:

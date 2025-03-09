@@ -1,4 +1,4 @@
-- name: Ignore Errors
+- name: lookup function
   hosts: localhost
   connection: local
   vars:
@@ -7,4 +7,3 @@
     - name: lookup function to get the data from files
       ansible.builtin.debug:
         msg: "to get the ami values in file it is {{ a }}"
-        

@@ -3,7 +3,7 @@
   connection: local
   tasks:
     - name: create packages
-      ansible.builtin.shell: sleep 60
+      ansible.builtin.shell: sleep 620
       async: 20
       poll: 10
     - name: install package use shell
